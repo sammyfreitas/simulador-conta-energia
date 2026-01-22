@@ -56,4 +56,9 @@ Ajuste proporcional:
 ## Como rodar localmente
 ```bash
 npm install
+<<<<<<< HEAD
 npm run dev
+=======
+npm run dev
+
+>>>>>>> 08a4dccbeb098ffb080e392b1c4ea145cb9285c3
