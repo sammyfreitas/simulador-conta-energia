@@ -1,0 +1,58 @@
+{
+  "LIGHT_RJ": {
+    "nome": "Light (RJ)",
+    "logo": "logos/light.png",
+    "paleta": {
+      "primaria": "#19A84B",
+      "primariaEscura": "#0F7A34",
+      "fundo": "#F6FFF8",
+      "cartao": "#FFFFFF",
+      "texto": "#0B1F12",
+      "muted": "#5B6B61",
+      "borda": "#D9EADD"
+    },
+    "cidades": ["Rio de Janeiro"]
+  },
+  "ENEL_RJ": {
+    "nome": "Enel (RJ)",
+    "logo": "logos/enel.png",
+    "paleta": {
+      "primaria": "#E4002B",
+      "primariaEscura": "#B00022",
+      "fundo": "#FFF7F8",
+      "cartao": "#FFFFFF",
+      "texto": "#21070C",
+      "muted": "#6B4B51",
+      "borda": "#F1D0D5"
+    },
+    "cidades": []
+  },
+  "ENEL_SP": {
+    "nome": "Enel (SP)",
+    "logo": "logos/enel.png",
+    "paleta": {
+      "primaria": "#E4002B",
+      "primariaEscura": "#B00022",
+      "fundo": "#FFF7F8",
+      "cartao": "#FFFFFF",
+      "texto": "#21070C",
+      "muted": "#6B4B51",
+      "borda": "#F1D0D5"
+    },
+    "cidades": []
+  },
+  "CEMIG_MG": {
+    "nome": "Cemig (MG)",
+    "logo": "logos/cemig.png",
+    "paleta": {
+      "primaria": "#0057B8",
+      "primariaEscura": "#003C80",
+      "fundo": "#F4F8FF",
+      "cartao": "#FFFFFF",
+      "texto": "#0A1426",
+      "muted": "#4E5D73",
+      "borda": "#D8E3F5"
+    },
+    "cidades": []
+  }
+}

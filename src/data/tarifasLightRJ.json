@@ -1,0 +1,59 @@
+{
+  "vigencia": "2026-01-01",
+  "classes": {
+    "RESIDENCIAL_B1": {
+      "rotulo": "Residencial (B1)",
+      "faixas": [
+        {
+          "ate": 50,
+          "tarifa": 0.8726
+        },
+        {
+          "ate": 300,
+          "tarifa": 1.06415
+        },
+        {
+          "ate": 999999,
+          "tarifa": 1.14816
+        }
+      ]
+    },
+    "NAO_RESIDENCIAL": {
+      "rotulo": "Não residencial",
+      "faixas": [
+        {
+          "ate": 300,
+          "tarifa": 1.09075
+        },
+        {
+          "ate": 999999,
+          "tarifa": 1.14816
+        }
+      ]
+    },
+    "RURAL_B2": {
+      "rotulo": "Rural (B2)",
+      "faixas": [
+        {
+          "ate": 300,
+          "tarifa": 1.09075
+        },
+        {
+          "ate": 999999,
+          "tarifa": 1.14816
+        }
+      ]
+    }
+  },
+  "bandeiras": {
+    "VERDE": 0.0,
+    "AMARELA": 0.01885,
+    "VERMELHA_P1": 0.04463,
+    "VERMELHA_P2": 0.07877
+  },
+  "impostosDefault": {
+    "icms": 0.24,
+    "pis": 0.01,
+    "cofins": 0.0463
+  }
+}
