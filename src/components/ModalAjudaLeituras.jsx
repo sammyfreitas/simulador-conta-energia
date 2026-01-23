@@ -25,15 +25,15 @@ export default function ModalAjudaLeituras({ open, onClose }) {
           <div className="helpText">
             <p>
               <b>Leitura anterior</b>: geralmente está na <b>conta do mês anterior</b>,
-              no campo <b>“Leitura Atual” ou "Última Leitura"</b>.
+              no campo <b>“Leitura Atual” pois foi a última leitura da sua conta para calcularmos o valor até a utilização atual.</b>.
             </p>
             <p>
-              <b>Leitura Hoje</b>: você pode pegar <b>direto no medidor</b> (relógio)
+              <b>Leitura Hoje</b>: você pode pegar <b>direto no medidor. Se for o modelo digital, espere piscar 03 e então anote o valor.</b> (relógio)
               hoje.
             </p>
 
             <div className="small" style={{ marginTop: 8 }}>
-              Dica: se você está usando a conta anterior como referência, a “última leitura”
+              Dica: se você está usando a conta anterior como referência, a “Leitura Atual”
               dela é a sua leitura anterior. A leitura atual você confere no medidor.
             </div>
           </div>
