@@ -1,6 +1,45 @@
 import aliquotasPorUF from "../data/aliquotasPorUF.json";
 import { calcularImpostosEstimadosPorBase } from "./taxas";
 
+function norm(s = "") {
+  return s
+    .toString()
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, ""); // remove acentos
+}
+
+const CLASSE_MAP = {
+  residencial: ["residencial", "casa", "domiciliar", "b1", "b1 residencial"],
+  rural: ["rural", "rural b2", "b2", "agro", "agricola"],
+  comercial: ["comercial", "loja", "b3", "servicos"],
+  industrial: ["industrial", "industria", "a4", "a3", "a2"],
+};
+
+function acharChaveClasse(objTarifas, classeUsuario) {
+  const alvo = norm(classeUsuario);
+  const chaves = Object.keys(objTarifas || {});
+  const chavesNorm = chaves.map((k) => ({ k, nk: norm(k) }));
+
+  // 1) match direto
+  const direto = chavesNorm.find((x) => x.nk === alvo);
+  if (direto) return direto.k;
+
+  // 2) tenta sinônimos
+  const sinonimos = CLASSE_MAP[alvo] || [];
+  for (const s of sinonimos) {
+    const m = chavesNorm.find((x) => x.nk.includes(norm(s)) || norm(s).includes(x.nk));
+    if (m) return m.k;
+  }
+
+  // 3) tentativa “contains”
+  const cont = chavesNorm.find((x) => x.nk.includes(alvo));
+  if (cont) return cont.k;
+
+  return null;
+}
+
 
 function diasEntre(a, b) {
   const da = new Date(a + "T00:00:00");

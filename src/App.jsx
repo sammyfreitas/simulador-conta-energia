@@ -36,10 +36,11 @@ export default function App() {
       resultadosRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 50);
   }
-
+  const primeiraChaveDistribuidora = Object.keys(distribuidores)[0];
+  const distribuidorPadrao = distribuidores[primeiraChaveDistribuidora];
   const [formulario, setFormulario] = useState({
-    chaveDistribuidora: "LIGHT_RJ",
-    cidade: "Rio de Janeiro",
+    chaveDistribuidora: primeiraChaveDistribuidora, 
+    cidade: distribuidorPadrao?.cidades?.[0] ?? "",
 
     dataAnterior: "",
     leituraAnterior: "",

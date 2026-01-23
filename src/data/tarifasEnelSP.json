@@ -1,6 +1,25 @@
 {
-  "vigencia": "2026-01-01",
-  "classes": {},
+  "vigencia": "2025-07-04",
+  "classes": {
+    "RESIDENCIAL_B1": {
+      "rotulo": "Residencial (B1)",
+      "faixas": [
+        { "ate": 999999, "tarifa": 0.72518 }
+      ]
+    },
+    "NAO_RESIDENCIAL": {
+      "rotulo": "Não residencial (B3 - demais classes)",
+      "faixas": [
+        { "ate": 999999, "tarifa": 0.72518 }
+      ]
+    },
+    "RURAL_B2": {
+      "rotulo": "Rural (B2)",
+      "faixas": [
+        { "ate": 999999, "tarifa": 0.72518 }
+      ]
+    }
+  },
   "bandeiras": {
     "VERDE": 0.0,
     "AMARELA": 0.01885,

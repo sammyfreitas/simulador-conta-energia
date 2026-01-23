@@ -13,7 +13,12 @@ export default function SimulatorForm({ distribuidores, formulario, setFormulari
           <label>Distribuidora</label>
           <select
             value={formulario.chaveDistribuidora}
-            onChange={(e) => atualizar({ chaveDistribuidora: e.target.value, cidade: "" })}
+            onChange={(e) => {
+              const novaChave = e.target.value;
+              const novoDistribuidor = distribuidores[novaChave];
+              const primeiraCidade = novoDistribuidor?.cidades?.[0] ?? "";
+              atualizar({ chaveDistribuidora: novaChave, cidade: primeiraCidade });
+            }}
           >
             {Object.entries(distribuidores).map(([chave, d]) => (
               <option key={chave} value={chave}>
@@ -21,6 +26,7 @@ export default function SimulatorForm({ distribuidores, formulario, setFormulari
               </option>
             ))}
           </select>
+
         </div>
 
         <div>

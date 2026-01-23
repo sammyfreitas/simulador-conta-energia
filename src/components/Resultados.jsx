@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { formatarMoeda, formatarNumero } from "../utils/calculadora";
+import ModalAjudaLeituras from "./ModalAjudaLeituras";
 
 export default function Resultados({ resultado }) {
+  const [openAjuda, setOpenAjuda] = useState(false);
   if (!resultado) return null;
 
   if (resultado.erro) {
@@ -16,6 +19,21 @@ export default function Resultados({ resultado }) {
       <div className="kpiRow">
         <div>
           <div className="small">Quanto está a conta até o momento (estimado)</div>
+          <button type="button" onClick={() => setOpenAjuda(true)}
+            style={{
+              background: "none",
+              border: "none",
+              padding: 0,
+              textDecoration: "underline",
+              cursor: "pointer",
+              color: "var(--primary-dark)"
+            }}
+          >
+            Clique aqui para ver onde buscar essas informações
+          </button>
+
+          <ModalAjudaLeituras open={openAjuda} onClose={() => setOpenAjuda(false)} />
+
           <div className="kpi">{formatarMoeda(resultado.totalAteAgora)}</div>
           <div className="small">
             {formatarNumero(resultado.kwhAteAgora, 0)} kWh em {resultado.dias} dias •{" "}
