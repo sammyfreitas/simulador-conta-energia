@@ -33,6 +33,23 @@ export default function Resultados({ resultado }) {
       </div>
 
       <hr className="hr" />
+      <div className="row">
+        <div>
+          <div className="small"><b>Impostos (até agora • estimado)</b></div>
+          <div className="small">ICMS: {formatarMoeda(resultado.impostosAteAgora?.impostos?.icms)}</div>
+          <div className="small">PIS: {formatarMoeda(resultado.impostosAteAgora?.impostos?.pis)}</div>
+          <div className="small">COFINS: {formatarMoeda(resultado.impostosAteAgora?.impostos?.cofins)}</div>
+          <div className="small"><b>Total impostos:</b> {formatarMoeda(resultado.impostosAteAgora?.impostos?.total)}</div>
+        </div>
+
+        <div>
+          <div className="small"><b>Impostos (projetado)</b></div>
+          <div className="small">ICMS: {formatarMoeda(resultado.impostosProjetado?.impostos?.icms)}</div>
+          <div className="small">PIS: {formatarMoeda(resultado.impostosProjetado?.impostos?.pis)}</div>
+          <div className="small">COFINS: {formatarMoeda(resultado.impostosProjetado?.impostos?.cofins)}</div>
+          <div className="small"><b>Total impostos:</b> {formatarMoeda(resultado.impostosProjetado?.impostos?.total)}</div>
+        </div>
+      </div>
 
       <div className="row">
         <div>

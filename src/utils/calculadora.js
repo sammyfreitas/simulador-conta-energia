@@ -1,3 +1,7 @@
+import aliquotasPorUF from "../data/aliquotasPorUF.json";
+import { calcularImpostosEstimadosPorBase } from "./taxas";
+
+
 function diasEntre(a, b) {
   const da = new Date(a + "T00:00:00");
   const db = new Date(b + "T00:00:00");
@@ -26,6 +30,7 @@ export function calcularSimulacao({
   dataAtual,
   leituraAtual,
   diasCiclo = 30,
+  uf,
   classe,
   bandeira,
   tarifas,
@@ -82,6 +87,27 @@ export function calcularSimulacao({
   const totalAteAgora = energiaAteAgora + bandeiraAteAgora + cipCosip;
   const totalProjetado = energiaProjetada + bandeiraProjetada + cipCosip + parcelamento + encargos;
 
+  // ===== Impostos estimados =====
+  // Base de impostos: (energia + bandeira). Parcelamento/encargos ficam fora (fixos, não consumo).
+  const ufUsada = (uf || tarifas?.uf || "RJ").toUpperCase();
+
+  const baseImpostosAteAgora = energiaAteAgora + bandeiraAteAgora;
+  const baseImpostosProjetado = energiaProjetada + bandeiraProjetada;
+
+  const impostosAteAgora = calcularImpostosEstimadosPorBase({
+    baseValor: baseImpostosAteAgora,
+    uf: ufUsada,
+    aliquotasPorUF,
+  });
+
+  const impostosProjetado = calcularImpostosEstimadosPorBase({
+    baseValor: baseImpostosProjetado,
+    uf: ufUsada,
+    aliquotasPorUF,
+  });
+
+  const totalAteAgoraComImpostos = totalAteAgora + impostosAteAgora.impostos.total;
+  const totalProjetadoComImpostos = totalProjetado + impostosProjetado.impostos.total;
 
 
   return {
@@ -103,7 +129,13 @@ export function calcularSimulacao({
     totalProjetado,
     parcelamentoRateado,
     encargos,
-    encargosRateados
+    encargosRateados,
+    ufUsada,
+    impostosAteAgora,
+    impostosProjetado,
+    totalAteAgoraComImpostos,
+    totalProjetadoComImpostos
+
   };
 }
 

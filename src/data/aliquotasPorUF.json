@@ -1,0 +1,5 @@
+{
+  "RJ": { "icms": 25, "pis": 0.65, "cofins": 3.0 },
+  "SP": { "icms": 18, "pis": 0.65, "cofins": 3.0 },
+  "MG": { "icms": 18, "pis": 0.65, "cofins": 3.0 }
+}

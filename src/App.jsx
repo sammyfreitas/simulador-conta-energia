@@ -66,13 +66,14 @@ export default function App() {
   ];
 
   // ✅ nomeDistribuidora também aqui
-  const nomeDistribuidora =
-    distribuidores?.[formulario.chaveDistribuidora]?.nome ?? "Distribuidora";
-  const baseUrl = import.meta.env.BASE_URL;
-  const logoUrl =
-    baseUrl +
-    (distribuidores[formulario.chaveDistribuidora]?.logo?.replace("/", "") ??
-      "logos/light.png");
+  const distribuidor = distribuidores?.[formulario.chaveDistribuidora];
+
+  const nomeDistribuidora = distribuidor?.nome ?? "Distribuidora";
+
+  const logoUrl = distribuidor?.logo
+    ? `${import.meta.env.BASE_URL}${distribuidor.logo}`
+    : `${import.meta.env.BASE_URL}logos/light.png`;
+
   
   
 
@@ -86,6 +87,7 @@ export default function App() {
       dataAtual: formulario.dataAtual,
       leituraAtual: formulario.leituraAtual,
       diasCiclo: formulario.diasCiclo,
+      uf: distribuidor?.uf,
       classe: formulario.classe,
       bandeira: formulario.bandeira,
       tarifas,
@@ -98,7 +100,7 @@ export default function App() {
   return (
     <div className="container">
       <Header distribuidoraSelecionada={nomeDistribuidora} logoUrl={logoUrl} links={links} />
-
+    
       <SimulatorForm
         distribuidores={distribuidores}
         formulario={formulario}
@@ -131,20 +133,18 @@ export default function App() {
           </div>
         </div>
 
-        <div
+        <img
+          src={`${import.meta.env.BASE_URL}logos/logoteclabs.png`}
+          alt="Logo TecLabs"
           style={{
-            width: 90,
-            height: 34,
-            border: "1px dashed var(--border)",
-            borderRadius: 12,
-            display: "grid",
-            placeItems: "center",
-            color: "var(--muted)",
-            fontSize: 12
+            height: 80,
+            padding: 6,
+            border: "1px solid var(--border)",
+            borderRadius: 10,
+            background: "#fff",
+            objectFit: "contain"
           }}
-        >
-          Logo
-        </div>
+        />
       </footer>
     </div>
   );

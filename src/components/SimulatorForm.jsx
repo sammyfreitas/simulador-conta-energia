@@ -48,9 +48,6 @@ export default function SimulatorForm({ distribuidores, formulario, setFormulari
       </div>
 
       <hr className="hr" />
-
-      <hr className="hr" />
-
       <div className="row">
         {/* Bloco ESQUERDO: datas + leituras com borda */}
         <div

@@ -1,6 +1,7 @@
 {
   "LIGHT_RJ": {
     "nome": "Light (RJ)",
+    "uf": "RJ",
     "logo": "logos/light.png",
     "paleta": {
       "primaria": "#19A84B",
@@ -11,7 +12,15 @@
       "muted": "#5B6B61",
       "borda": "#D9EADD"
     },
-    "cidades": ["Rio de Janeiro"]
+    "cidades": ["Rio de Janeiro", 
+      "Belford Roxo", 
+      "Duque de Caxias",
+      "Itaguaí",
+      "Japeri", 
+      "Mesquita", 
+      "Nilópolis", 
+      "Nova Iguaçu",
+      "Paracambi"]
   },
   "ENEL_RJ": {
     "nome": "Enel (RJ)",
@@ -25,7 +34,7 @@
       "muted": "#6B4B51",
       "borda": "#F1D0D5"
     },
-    "cidades": []
+    "cidades": ["Maricá", "Niterói", "São Gonçalo"]
   },
   "ENEL_SP": {
     "nome": "Enel (SP)",
@@ -39,7 +48,17 @@
       "muted": "#6B4B51",
       "borda": "#F1D0D5"
     },
-    "cidades": []
+    "cidades": ["São Paulo", 
+    "Barueri", 
+      "Carapicuíba", 
+      "Cotia",
+      "Diadema",
+      "Itapevi",
+      "Mauá",
+      "Osasco",
+      "Santo André", 
+      "São Bernardo do Campo", 
+      "Taboão da Serra"]
   },
   "CEMIG_MG": {
     "nome": "Cemig (MG)",
@@ -53,6 +72,18 @@
       "muted": "#4E5D73",
       "borda": "#D8E3F5"
     },
-    "cidades": []
+    "cidades": ["Belo Horizonte", 
+      "Betim", 
+      "Brumadinho", 
+      "Confins",
+      "Contagem",
+      "Ibirité",
+      "Itabira",
+      "Lagoa Santa",
+      "Nova Lima",
+      "Sabará",
+      "Santa Luzia",
+      "Vespasiano"
+    ]
   }
 }
