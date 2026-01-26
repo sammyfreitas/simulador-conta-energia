@@ -1,11 +1,11 @@
 export default function Header() {
   const links = [
-    { rotulo: "WhatsApp", href: "https://wa.me/55SEUNUMEROAQUI", icone: "📱" },
-    { rotulo: "GitHub", href: "https://github.com/SEUUSER", icone: "💻" },
-    { rotulo: "LinkedIn", href: "https://www.linkedin.com/in/SEUPERFIL", icone: "🔗" },
+    { rotulo: "WhatsApp", href: "https://wa.me/5521986140005", icone: "📱" },
+    { rotulo: "GitHub", href: "https://github.com/sammyfreitas", icone: "💻" },
+    { rotulo: "LinkedIn", href: "https://www.linkedin.com/in/tony-s-freitas", icone: "🔗" },
     { rotulo: "Instagram", href: "https://instagram.com/anthony_tijuduke", icone: "📸" },
-    { rotulo: "Facebook", href: "https://facebook.com/SEUPERFIL", icone: "📘" },
-    { rotulo: "Portfólio", href: "https://SEU-PORTFOLIO.com", icone: "🧩" }
+    { rotulo: "Facebook", href: "https://facebook.com//anthonyfreitas78", icone: "📘" },
+    { rotulo: "Portfólio", href: "https://sammyfreitas.github.io/portfolio-v2/", icone: "🧩" }
   ];
 
   return (
